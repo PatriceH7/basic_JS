@@ -70,20 +70,21 @@ if (found) {
 
 console.log(`Supprime le livre avec l'ID: 133712 ;`);
 let searchedId2 = 133712;
-let resultArray = [];
+let resultArray1 = [];
 for (let index in books) {
     if (books[index].id !== searchedId2) {
-        resultArray.push(books[index]);
+        resultArray1.push(books[index]);
     }
 }
-console.log(resultArray);
+console.log(resultArray1);
 
 console.log(`Trie les livres par ordre alphabétique (sans celui avec l'ID 133712 car il est supprimé).`)
-resultArray.sort(function compare(a, b) {
+let resultArray2 = resultArray1;
+resultArray2.sort(function compare(a, b) {
     if (a.title < b.title)
         return -1;
     if (a.title > b.title)
         return 1;
     return 0;
 });
-console.log(resultArray);
+console.log(resultArray2);
